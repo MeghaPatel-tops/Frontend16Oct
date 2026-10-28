@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            background-color: antiquewhite;
+            height: 300px;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            gap:20px;
+            align-items: start;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(188, 188, 99);
+        }
+         nav{
+           background-color: rgb(9, 9, 44);
+           padding: 20px 8%;
+           color: white;
+           display: flex;
+           justify-content: space-between;
+        }
+        nav ul {
+            display: flex;
+            gap:30px
+        }
+        nav ul li{
+            list-style: none;
+        }
+        nav ul li a{
+            text-decoration: none;
+            font-size:1.5em;
+            color: white;
+        }
+        nav ul li:hover a{
+            padding: 10px;
+            background-color: white;
+            color: rgb(9, 9, 44);
+        }
+        .row{
+            background-color: rgb(151, 158, 158);
+            padding: 50px 100px;
+            display: flex;
+            gap:20px;
+        }
+        .col{
+            flex: 1;
+            padding: 50px 0px;
+            background-color: white;
+            border-radius: 20px;
+            /* box-shadow: 3px 3px 5px black; */
+            text-align: center;
+            border-bottom: 5px solid aqua;
+        }
+        .col:hover{
+            border: 2px solid aqua;
+             border-bottom: 5px solid aqua;
+        }
+        #box-1{
+            flex-grow: 2;
+        }
+        #box-2{
+            flex-shrink: 2;
+        }
+        #box-3{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>MDesign</h2>
+        <ul>
+            <li><a href="">Images</a></li>
+            <li><a href="">Canvas</a></li>
+            <li><a href="">3d Paint</a></li>
+             <li><a href="">Images</a></li>
+            
+             
+        </ul>
+        <ul>
+            <li><a href="">Login</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <div class="box" id="box-1">Box-1</div>
+        <div class="box" id="box-2">Box-2</div>
+        <div class="box" id="box-3">Box-3</div>
+        <div class="box" id="box-4">Box-4</div>
+        <div class="box" id="box-5">Box-5</div>
+        <div class="box" id="box-6">Box-6</div>
+        <div class="box" id="box-7">Box-7</div>
+        <div class="box" id="box-8">Box-8</div>
+        <div class="box" id="box-9">Box-9</div>
+    </div>
+    <div class="row">
+        <div class="col" id="col-1">col-1</div>
+        <div class="col" id="col-2">col-2</div>
+        <div class="col" id="col-3">col-3</div>
+        <div class="col" id="col-4">col-4</div>
+    </div>
+</body>
+</html>
