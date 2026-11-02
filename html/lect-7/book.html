@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+              perspective: 500px;
+        }
+        .card{
+            position: relative;
+            height: 400px;
+            width: 250px;
+            border: 2px solid black;
+            
+        }
+        .card-1{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+              display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+           font-size: 2em;
+           inset: 0;
+        transform-origin: left center;
+        transform-style: preserve-3d;
+        z-index: 1;
+        /* un-hover: wait ~27 hours before returning = page "stays" turned */
+        transition: transform 2s ease ;
+        }
+        .card-1:hover{
+           transform: rotateY(-180deg);
+            box-shadow: -10px 0 25px rgba(0,0,0,.4);
+
+        }
+          .card-2{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+          
+           
+            background-color: white;
+            color: black;
+            
+            z-index: -1;
+            flex-direction: column;
+            gap:10px;
+             
+        }
+        .card-2 h2{
+            text-align: center;
+        }
+        ul li{
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <div class="card-1">
+            OPEN
+            <br>
+            ME
+        </div>
+        <div class="card-2">
+            <h2>Index</h2>
+            <ul>
+                <li type="1">Introduction.....</li>
+                <li type="1">Basics</li>
+                <li type="1">Advanced</li>
+                <li type="1">Frmaework</li>
+                <li type="1">Projects</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Turn Effect</title>
+<style>
+    body{
+        background: beige;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+    }
+
+    .book{
+        --n: 4;                         /* total number of pages */
+        position: relative;
+        width: 250px;
+        height: 380px;
+        perspective: 1800px;
+        transition: transform 1s ease;
+    }
+    .book.open{ transform: translateX(125px); }   /* keeps the open book centered */
+
+    .page{
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+        transform-origin: left center;            /* spine on the left */
+        transform-style: preserve-3d;
+        z-index: calc(var(--n) - var(--i));       /* unturned: first page on top */
+        transition: transform 1s ease, z-index 0s 0.5s;  /* swap stacking mid-turn */
+    }
+    .page.flipped{
+        transform: rotateY(-180deg);
+        z-index: var(--i);                        /* turned: last turned page on top */
+    }
+
+    .face{
+        position: absolute;
+        inset: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border: 2px solid #222;
+        background: #fffdf5;
+    }
+    .back{ transform: rotateY(180deg); }
+
+    /* soft shadow on the page edge for depth */
+    .page.flipped .back{ box-shadow: -6px 0 14px rgba(0,0,0,.2); }
+    .page:not(.flipped) .front{ box-shadow: 6px 0 14px rgba(0,0,0,.2); }
+
+    .cover{ background: #222; color: #fff; font-size: 2em; text-align: center; }
+    .cover-inside{ background: #444; color: #ddd; }
+    ul{ padding-left: 20px; }
+    li{ padding: 6px 0; }
+</style>
+</head>
+<body>
+
+<div class="book" id="book">
+    <div class="page" style="--i:0">
+        <div class="face front cover">MY<br>BOOK</div>
+        <div class="face back cover-inside">Click to turn pages</div>
+    </div>
+
+    <div class="page" style="--i:1">
+        <div class="face front">
+            <h2>Index</h2>
+            <ul>
+                <li>Introduction</li>
+                <li>Basics</li>
+                <li>Advanced</li>
+            </ul>
+        </div>
+        <div class="face back"><h2>Page 2</h2></div>
+    </div>
+
+    <div class="page" style="--i:2">
+        <div class="face front"><h2>Chapter 1</h2></div>
+        <div class="face back"><h2>Page 4</h2></div>
+    </div>
+
+    <div class="page" style="--i:3">
+        <div class="face front"><h2>The End</h2></div>
+        <div class="face back cover-inside">Back cover</div>
+    </div>
+</div>
+
+<script>
+    const book  = document.getElementById('book');
+    const pages = document.querySelectorAll('.page');
+    console.log(pages);
+    
+
+    pages.forEach(page => {
+        page.addEventListener('click', () => {
+            page.classList.toggle('flipped');
+            // shift the book when the cover is open
+            book.classList.toggle('open', pages[0].classList.contains('flipped'));
+        });
+    });
+</script>
+
+</body>
+</html>
