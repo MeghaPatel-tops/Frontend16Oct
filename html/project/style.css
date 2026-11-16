@@ -1,0 +1,54 @@
+*{
+    font-family: "Poppins", sans-serif;
+
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main{
+    height: 650px;
+    background-image: url(images/hero-back-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 5%;
+}
+.logo-div{
+    display: flex;
+    justify-content: space-between;
+}
+.logo-div img{
+    height: 100px;
+    width: 200px;
+    transform: rotate(-3deg);
+}
+.menu-toggle ,#menu-toggle{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    display: flex;
+    gap:20px;
+    font-weight: 500;
+    font-size: 1em;
+    color: rgb(79, 146, 172);
+}
+.active , .nav-item:hover,.cart{
+    background-color: rgb(79, 146, 172);
+    color: white;
+}
+.nav-item{
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+#search{
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 3px gray;
+}
