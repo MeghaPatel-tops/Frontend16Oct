@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 .main{
     height: 650px;
@@ -52,3 +53,226 @@ nav{
     border: none;
     box-shadow: 2px 2px 3px gray;
 }
+/* //==========================hero */
+.hero-div{
+    display: flex;
+    padding: 50px 0px;
+}
+.hero-text{
+  flex: 1;
+  transform: translate(0,100px);
+  opacity: 0;
+  animation-name: TextUp;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+@keyframes TextUp {
+     0%{
+        transform: translate(0,100px);
+        
+    }
+    100%{
+        transform: translate(0px,0px);
+        opacity: 1;
+        
+    }
+}
+.hero-img{
+  flex: 1;
+}
+.hero-img img{
+    width: 100%;
+    height: 500px;
+    transform: translate(1200px,0);
+    animation-name: HeroimgMove;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+@keyframes HeroimgMove {
+    0%{
+        transform: translate(100px,0);
+    }
+    100%{
+        transform: translate(0px,0);
+    }
+}
+.p1{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(76, 76, 113);
+    transform: rotate(-2deg);
+    
+}
+.hero-text h1{
+    font-size: 4em;
+    font-weight: bolder;
+     transform: rotate(-2deg);
+     margin-bottom: 20px;
+    
+}
+.blue{
+    color: blue;
+}
+.yellow{
+    color: orange;
+}
+.dblue{
+    color: rgb(76, 76, 113);
+    font-weight: 700;
+    margin-bottom: 10px;
+    
+}
+.btn{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+}
+.btn-div button{
+    background-color: orange;
+    color: blue;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.hero-row{
+    display: grid;
+    grid-template-columns:  repeat(3,1fr);
+    
+}
+.hero-col{
+    border-right: 2px solid blue;
+    text-align: center;
+    padding-left: 10px;
+}
+.hero-col:nth-child(3){
+    border-right:none
+}
+section{
+    padding: 50px 8%;
+}
+.subhead{
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 3px gray;
+    color: blue;
+    margin-bottom: 20px;
+}
+.catrow{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: space-between;
+    gap:20px
+}
+.catcol {
+    opacity: 0;
+    transform: scale(0.5);
+    border-radius: 50%;
+    padding: 10px;
+    animation: showUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes showUp {
+    0%{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#catcol1 { animation-delay: 1s; }
+#catcol2 { animation-delay: 2s; }
+#catcol3 { animation-delay: 3s; }
+#catcol4 { animation-delay: 4s; }
+#catcol5 { animation-delay: 5s; }
+.catcol img{
+    height: 100px;
+    width: 100px;
+     border-radius: 50%;
+     margin-left: auto;
+     margin-right: auto;
+     display: block;
+     cursor: pointer;
+}
+.product{
+    margin-top: 50px;
+}
+.product-row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    gap:20px;
+}
+.product-col{
+    background-color:white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+.pro-img img{
+      margin-left: auto;
+     margin-right: auto;
+     display: block;
+}
+.pro-text h3{
+    color: rgb(76, 76, 113);
+    font-weight: 700;
+}
+.pro-text h4{
+    color: rgb(76, 76, 113);
+    font-weight: 700;
+}
+.pro-text button{
+    background-color: orange;
+    color: blue;
+}
+footer{
+    background-color: skyblue;
+    padding: 50px 8% 10px;
+    
+}
+.foot-row{
+    display: grid;
+    grid-template-columns:  repeat(3,1fr);
+}
+.footinfo{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    color: blue;
+    font-weight: bold;
+}
+form{
+    border-radius: 20px;
+    box-shadow: 3px 3px 4px 4px gray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.forminput{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.btnsubmit{
+    background-color: blue;
+    color: white;
+}
+.footend{
+    margin-top: 30px;
+    text-align: center;
+    color: blue;
+}
+
